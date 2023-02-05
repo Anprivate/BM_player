@@ -1,0 +1,70 @@
+program bmffplaytest;
+
+uses
+  Vcl.Forms,
+  Unitbmffpo in 'Unitbmffpo.pas' {Form1},
+  FFTypes in 'headers\FFTypes.pas',
+  libavcodec in 'headers\libavcodec.pas',
+  libavcodec_avfft in 'headers\libavcodec_avfft.pas',
+  libavdevice in 'headers\libavdevice.pas',
+  libavfilter in 'headers\libavfilter.pas',
+  libavfilter_avcodec in 'headers\libavfilter_avcodec.pas',
+  libavfilter_buffersink in 'headers\libavfilter_buffersink.pas',
+  libavfilter_buffersrc in 'headers\libavfilter_buffersrc.pas',
+  libavfilter_formats in 'headers\libavfilter_formats.pas',
+  libavformat in 'headers\libavformat.pas',
+  libavformat_avio in 'headers\libavformat_avio.pas',
+  libavformat_url in 'headers\libavformat_url.pas',
+  libavutil in 'headers\libavutil.pas',
+  libavutil_audio_fifo in 'headers\libavutil_audio_fifo.pas',
+  libavutil_avstring in 'headers\libavutil_avstring.pas',
+  libavutil_bprint in 'headers\libavutil_bprint.pas',
+  libavutil_buffer in 'headers\libavutil_buffer.pas',
+  libavutil_channel_layout in 'headers\libavutil_channel_layout.pas',
+  libavutil_common in 'headers\libavutil_common.pas',
+  libavutil_cpu in 'headers\libavutil_cpu.pas',
+  libavutil_dict in 'headers\libavutil_dict.pas',
+  libavutil_display in 'headers\libavutil_display.pas',
+  libavutil_error in 'headers\libavutil_error.pas',
+  libavutil_eval in 'headers\libavutil_eval.pas',
+  libavutil_fifo in 'headers\libavutil_fifo.pas',
+  libavutil_file in 'headers\libavutil_file.pas',
+  libavutil_frame in 'headers\libavutil_frame.pas',
+  libavutil_hwcontext in 'headers\libavutil_hwcontext.pas',
+  libavutil_imgutils in 'headers\libavutil_imgutils.pas',
+  libavutil_log in 'headers\libavutil_log.pas',
+  libavutil_mathematics in 'headers\libavutil_mathematics.pas',
+  libavutil_md5 in 'headers\libavutil_md5.pas',
+  libavutil_mem in 'headers\libavutil_mem.pas',
+  libavutil_motion_vector in 'headers\libavutil_motion_vector.pas',
+  libavutil_opt in 'headers\libavutil_opt.pas',
+  libavutil_parseutils in 'headers\libavutil_parseutils.pas',
+  libavutil_pixdesc in 'headers\libavutil_pixdesc.pas',
+  libavutil_pixfmt in 'headers\libavutil_pixfmt.pas',
+  libavutil_rational in 'headers\libavutil_rational.pas',
+  libavutil_samplefmt in 'headers\libavutil_samplefmt.pas',
+  libavutil_time in 'headers\libavutil_time.pas',
+  libavutil_timestamp in 'headers\libavutil_timestamp.pas',
+  libswresample in 'headers\libswresample.pas',
+  libswscale in 'headers\libswscale.pas',
+  ff_reader in 'ff_reader.pas',
+  PreviewWindow in 'PreviewWindow.pas',
+  DeckLinkAPI.Configuration in 'Include\DeckLinkAPI.Configuration.pas',
+  DeckLinkAPI.DeckControl in 'Include\DeckLinkAPI.DeckControl.pas',
+  DeckLinkAPI.Discovery in 'Include\DeckLinkAPI.Discovery.pas',
+  DeckLinkAPI.Modes in 'Include\DeckLinkAPI.Modes.pas',
+  DeckLinkAPI in 'Include\DeckLinkAPI.pas',
+  DeckLinkAPI.Streaming in 'Include\DeckLinkAPI.Streaming.pas',
+  DeckLinkAPI.Types in 'Include\DeckLinkAPI.Types.pas',
+  global_types_unit in 'global_types_unit.pas',
+  bm_out in 'bm_out.pas',
+  frame_feeder_thread in 'frame_feeder_thread.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
